@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Knex } from 'knex';
 import path from 'path';
 
