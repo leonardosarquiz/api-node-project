@@ -10,8 +10,8 @@
     "lint": "eslint src --ext .ts --fix",
     "knex:migrate": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",
     "knex:rollback": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
-    "knex:rollback-all": "knex --knexfile ./src/server/database/knex/rollback.ts migrate:rollback --all",
-    "knex:rollback-seed": "knex --knexfile ./src/server/database/knex/rollback.ts seed:run"
+    "knex:rollback-all": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback --all",
+    "knex:seed": "knex --knexfile ./src/server/database/knex/Environment.ts  seed:run"
   },
   "keywords": [],
   "author": "",
