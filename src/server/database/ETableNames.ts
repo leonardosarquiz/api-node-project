@@ -1,4 +1,5 @@
 export enum EtableNames {
   cidade = 'cidade',
-  pessoa = 'pessoa'
+  pessoa = 'pessoa',
+  usuario = 'usuario'
 }
