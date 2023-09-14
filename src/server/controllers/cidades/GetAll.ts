@@ -40,7 +40,7 @@ export const getAll = async (req: Request<{}, {}, {}, IQueryProps>, res: Respons
 
   // result vai listar todas as cidades
 
-  const result = await CidadesProvider.getAll(req.query.page || 1, req.query.limit || 7, req.query.filter || '', Number(req.query.id));
+  const result = await CidadesProvider.getAll(req.query.page || 1, req.query.limit || 7, req.query.filter || '', Number(req.query.id || 0));
 
   // vai retornar um total numerico de cidades
 
