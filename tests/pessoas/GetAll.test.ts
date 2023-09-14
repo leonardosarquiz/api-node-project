@@ -2,6 +2,18 @@ import { StatusCodes } from 'http-status-codes';
 import { testServer } from '../jest.setup';
 
 describe('pessoas - GetAll', () => {
+
+  let accessToken = '';
+
+  beforeAll(async () => {
+    const email = 'getall-pessoas@gmail.com';
+    await testServer.post('/cadastrar').send({ nome: 'Teste', email, senha: '1234567' });
+    const signInRes = await testServer.post('/entrar').set({ email, senha: '1234567' });
+
+    accessToken = signInRes.body.accessToken;
+  });
+
+
   let cidadeId: number | undefined = undefined;
 
   beforeAll(async () => {
@@ -12,7 +24,7 @@ describe('pessoas - GetAll', () => {
 
 
   it('Buscar todos os registros', async () => {
-    const res1 = await testServer.post('/pessoas').send({
+    const res1 = await testServer.post('/pessoas').set({ Authorization: `Bearer ${accessToken}` }).send({
       nomeCompleto: 'leonardo sarquiz huge',
       email: 'leosarquizhuge@gmail.com',
       cidadeId
