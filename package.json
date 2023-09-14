@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "production": "node ./build/index.js",
-    "postinstall": "tsc",
+    "preproduction": "tsc",
     "lint": "eslint src --ext .ts --fix",
     "knex:migrate": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",
     "knex:rollback": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
